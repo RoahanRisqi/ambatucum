@@ -1,0 +1,14 @@
+body{
+  backgraucolor = #00000;
+  font-faamily = Arial,resif;
+  color: #19938364;
+}
+.kartu-profil text{
+    width: 100%;
+    margin: 50px auto;
+    text-align:center;
+}
+.kartu-profil img{
+  width: 100%;
+  border-radius:50%;
+}
