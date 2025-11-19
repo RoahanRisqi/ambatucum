@@ -7,7 +7,7 @@ const chatBubble = document.getElementById('chatBubble');
 // 🔑 ISI API KEY DI SINI (WAJIB!)
 // ==========================================
 const GEMINI_API_KEY = "AIzaSyDzkd2f1W4qnNNTk28NCxedqlT47AtedWY";
-const OPENAI_API_KEY = "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";
+const OPENAI_API_KEY = "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";
 // ==========================================
 
 // Variabel status agar karakter tidak ganggu saat AI mikir
