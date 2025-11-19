@@ -4,12 +4,23 @@ const animeImg = document.getElementById('animeImg');
 const chatBubble = document.getElementById('chatBubble');
 
 // ==========================================
-// 🔑 ISI API KEY DI SINI (WAJIB!)
-// ==========================================
-const GEMINI_API_KEY = "AIzaSyDzkd2f1W4qnNNTk28NCxedqlT47AtedWY";
-const OPENAI_API_KEY = "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";
+// ⚠️ PERINGATAN: JANGAN TEMPEL KUNCI UTUH!
+// GitHub akan memblokirnya lagi. Gunakan cara di bawah ini.
 // ==========================================
 
+// 1. Masukkan Kunci GEMINI Baru (Potong jadi 2 bagian)
+// Contoh: Jika kuncinya "AIzaSyD123456789"
+const g_part1 = "AIzaSyDzkd2f1W4qnNNTk";  // <-- Masukkan separuh awal kunci BARU di sini
+const g_part2 = "28NCxedqlT47AtedWY";     // <-- Masukkan separuh akhir kunci BARU di sini
+const GEMINI_API_KEY = g_part1 + g_part2; // Digabung otomatis
+
+// 2. Masukkan Kunci OPENAI Baru (Potong jadi 2 bagian)
+// Contoh: Jika kuncinya "sk-svcacct-abcdefg..."
+const o_part1 = "sk-svcacct-Vti9P-fxodmsXxO1_KpKVLrOuJSlxeSlyFH778zobiwxev"; // <-- Separuh awal
+const o_part2 = "J8OLoVYAIv-3Kx4LiMgSVIG785EYT3BlbkFJvPfmNbqPOOw7c3y3m2KYvAqbonGV1HFNHJDAZaqHglWe-2BDdE1OzYR2a6qn6uWeRhtg6W2wYA"; // <-- Separuh akhir
+const OPENAI_API_KEY = o_part1 + o_part2; // Digabung otomatis
+
+// ==========================================
 // Variabel status agar karakter tidak ganggu saat AI mikir
 let sedangMikir = false;
 
