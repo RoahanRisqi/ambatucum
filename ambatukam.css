@@ -1,14 +1,18 @@
-body{
-  backgraucolor = #00000;
-  font-faamily = Arial,resif;
-  color: #19938364;
+body {
+  /* Gunakan titik dua (:), bukan sama dengan (=) */
+  background-color: #000000; 
+  font-family: Arial, sans-serif; /* 'resif' typo, mungkin maksudnya serif atau sans-serif */
+  color: #199383; /* Hex code biasanya 6 digit */
 }
-.kartu-profil text{
+
+.kartu-profil text { /* Tag <text> tidak standar di HTML, pastikan sesuai dengan elemen di HTML Anda (misal <p> atau <span>) */
     width: 100%;
     margin: 50px auto;
-    text-align:center;
+    text-align: center;
+    display: block; /* Elemen text butuh display block untuk margin auto */
 }
-.kartu-profil img{
+
+.kartu-profil img {
   width: 100%;
-  border-radius:50%;
+  border-radius: 50%;
 }
