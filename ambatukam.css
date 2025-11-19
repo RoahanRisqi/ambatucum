@@ -1,18 +1,99 @@
 body {
-  /* Gunakan titik dua (:), bukan sama dengan (=) */
-  background-color: #000000; 
-  font-family: Arial, sans-serif; /* 'resif' typo, mungkin maksudnya serif atau sans-serif */
-  color: #199383; /* Hex code biasanya 6 digit */
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden; /* Supaya tidak ada scrollbar */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    /* MENGGUNAKAN GAMBAR PICSART SEBAGAI BACKGROUND */
+    /* Pastikan nama file sesuai persis dengan yang di folder */
+    background-image: url('Picsart_25-09-27_06-43-35-258.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.kartu-profil text { /* Tag <text> tidak standar di HTML, pastikan sesuai dengan elemen di HTML Anda (misal <p> atau <span>) */
-    width: 100%;
-    margin: 50px auto;
+/* Container utama yang fleksibel */
+.container {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-around;
+    transition: all 0.5s ease;
+}
+
+/* POSISI KIRI (Default) */
+.posisi-kiri {
+    flex-direction: row; /* Karakter di Kiri, Kontrol di Kanan */
+}
+
+/* POSISI KANAN */
+.posisi-kanan {
+    flex-direction: row-reverse; /* Karakter di Kanan, Kontrol di Kiri */
+}
+
+/* Wrapper Karakter agar bisa bergerak halus */
+.character-wrapper {
+    position: relative;
     text-align: center;
-    display: block; /* Elemen text butuh display block untuk margin auto */
+    transition: transform 0.1s ease-out; /* Animasi gerak mengikuti mouse */
 }
 
-.kartu-profil img {
-  width: 100%;
-  border-radius: 50%;
+/* Gambar Anime */
+.anime-img {
+    width: 300px; /* Atur besar kecil gambar disini */
+    height: auto;
+    drop-shadow: 0px 10px 20px rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+
+/* Balon Chat */
+.chat-bubble {
+    background: white;
+    padding: 15px 25px;
+    border-radius: 20px;
+    border-bottom-left-radius: 0;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    max-width: 250px;
+    animation: popUp 0.5s ease;
+}
+
+/* Area Input & Tombol */
+.controls {
+    background: rgba(0, 0, 0, 0.6); /* Kotak transparan hitam */
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(5px); /* Efek blur di belakang kotak */
+    color: white;
+    text-align: center;
+}
+
+input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 70%;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #199383;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #147a6d;
+}
+
+@keyframes popUp {
+    from { transform: scale(0); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
 }
