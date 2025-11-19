@@ -198,3 +198,19 @@ document.addEventListener('mousemove', (e) => {
     const y = (window.innerHeight - e.pageY * 2) / 80;
     animeWrapper.style.transform = `translateX(${x}px) translateY(${y}px)`;
 });
+
+// ==========================================
+// ⚡ FITUR TAMBAHAN: ENTER UNTUK KIRIM
+// ==========================================
+const inputField = document.getElementById('inputPesan');
+
+// Cek apakah elemen input ada (biar gak error)
+if (inputField) {
+    inputField.addEventListener("keypress", function(event) {
+        // Jika tombol yang ditekan adalah "Enter"
+        if (event.key === "Enter") {
+            event.preventDefault(); // Mencegah enter membuat baris baru
+            kirimPesan(); // Panggil fungsi kirim pesan
+        }
+    });
+}
