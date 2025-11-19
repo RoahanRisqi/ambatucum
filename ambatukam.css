@@ -2,18 +2,15 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    overflow: hidden; /* Supaya tidak ada scrollbar */
+    overflow: hidden;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
-    /* MENGGUNAKAN GAMBAR PICSART SEBAGAI BACKGROUND */
-    /* Pastikan nama file sesuai persis dengan yang di folder */
+    /* Background Image */
     background-image: url('Picsart_25-09-27_06-43-35-258.png'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-/* Container utama yang fleksibel */
 .container {
     display: flex;
     height: 100%;
@@ -22,78 +19,85 @@ body {
     transition: all 0.5s ease;
 }
 
-/* POSISI KIRI (Default) */
-.posisi-kiri {
-    flex-direction: row; /* Karakter di Kiri, Kontrol di Kanan */
-}
+.posisi-kiri { flex-direction: row; }
+.posisi-kanan { flex-direction: row-reverse; }
 
-/* POSISI KANAN */
-.posisi-kanan {
-    flex-direction: row-reverse; /* Karakter di Kanan, Kontrol di Kiri */
-}
-
-/* Wrapper Karakter agar bisa bergerak halus */
 .character-wrapper {
     position: relative;
     text-align: center;
-    transition: transform 0.1s ease-out; /* Animasi gerak mengikuti mouse */
+    /* Animasi Bernafas (agar terlihat hidup) */
+    animation: bernafas 3s infinite ease-in-out;
+    transition: transform 0.1s ease-out; /* Untuk efek mouse */
+    z-index: 10;
 }
 
-/* Gambar Anime */
 .anime-img {
-    width: 300px; /* Atur besar kecil gambar disini */
+    width: 350px; 
     height: auto;
-    drop-shadow: 0px 10px 20px rgba(0,0,0,0.5);
     cursor: pointer;
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.2));
+    transition: transform 0.2s;
 }
 
-/* Balon Chat */
+.anime-img:active {
+    transform: scale(0.95) rotate(-5deg); /* Efek kaget saat diklik */
+}
+
 .chat-bubble {
-    background: white;
-    padding: 15px 25px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
     border-radius: 20px;
     border-bottom-left-radius: 0;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-weight: bold;
     color: #333;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     max-width: 250px;
-    animation: popUp 0.5s ease;
+    position: relative;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Efek membal saat digeser */
 }
 
-/* Area Input & Tombol */
+/* KELAS UNTUK EFEK DIDORONG */
+.didorong {
+    transform: translateX(30px) rotate(5deg);
+    background-color: #ffeeba; /* Warna berubah dikit saat didorong */
+}
+
 .controls {
-    background: rgba(0, 0, 0, 0.6); /* Kotak transparan hitam */
+    background: rgba(0, 0, 0, 0.7);
     padding: 30px;
     border-radius: 15px;
-    backdrop-filter: blur(5px); /* Efek blur di belakang kotak */
+    backdrop-filter: blur(10px);
     color: white;
     text-align: center;
+    z-index: 20;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
 input {
-    padding: 10px;
-    border-radius: 5px;
+    padding: 12px;
+    border-radius: 25px;
     border: none;
-    width: 70%;
+    width: 65%;
+    outline: none;
 }
 
 button {
-    padding: 10px 20px;
-    background-color: #199383;
+    padding: 12px 25px;
+    background: linear-gradient(45deg, #199383, #2ecc71);
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
     font-weight: bold;
-    transition: background 0.3s;
+    transition: transform 0.2s;
+    margin-top: 10px;
 }
 
-button:hover {
-    background-color: #147a6d;
-}
+button:hover { transform: scale(1.05); }
 
-@keyframes popUp {
-    from { transform: scale(0); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
+/* Definisi Animasi Bernafas */
+@keyframes bernafas {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02) translateY(-5px); }
 }
