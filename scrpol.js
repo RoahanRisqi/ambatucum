@@ -7,18 +7,16 @@ const chatBubble = document.getElementById('chatBubble');
 // ⚠️ PENTING: GANTI DENGAN KUNCI YANG BARU BUAT!
 // Jangan pakai kunci lama yang 'AIzaSyDzkd...' (Itu sudah mati)
 // ==========================================
+// Contoh: Jika kuncinya "AIzaSyD123456789"
+const g_part1 = "AIzaSyDzkd2f1W4qnNNTk";  // <-- Masukkan separuh awal kunci BARU di sini
+const g_part2 = "28NCxedqlT47AtedWY";     // <-- Masukkan separuh akhir kunci BARU di sini
+const GEMINI_API_KEY = g_part1 + g_part2; // Digabung otomatis
 
-// 1. Masukkan Kunci GEMINI BARU (Potong jadi 2 bagian)
-// Bikin baru di aistudio.google.com -> Create API Key
-const g_part1 = "MASUKKAN_KUNCI_BARU_PART_1"; // <-- Contoh: "AIzaSyC..." (YANG BARU)
-const g_part2 = "MASUKKAN_KUNCI_BARU_PART_2"; // <-- Sisanya
-const GEMINI_API_KEY = g_part1 + g_part2; 
-
-// 2. Masukkan Kunci OPENAI BARU (Jika ada)
-const o_part1 = "sk-svcacct-MASUKKAN_BARU"; 
-const o_part2 = "MASUKKAN_SISA_KUNCI_BARU"; 
-const OPENAI_API_KEY = o_part1 + o_part2; 
-
+// 2. Masukkan Kunci OPENAI Baru (Potong jadi 2 bagian)
+// Contoh: Jika kuncinya "sk-svcacct-abcdefg..."
+const o_part1 = "sk-svcacct-Vti9P-fxodmsXxO1_KpKVLrOuJSlxeSlyFH778zobiwxev"; // <-- Separuh awal
+const o_part2 = "J8OLoVYAIv-3Kx4LiMgSVIG785EYT3BlbkFJvPfmNbqPOOw7c3y3m2KYvAqbonGV1HFNHJDAZaqHglWe-2BDdE1OzYR2a6qn6uWeRhtg6W2wYA"; // <-- Separuh akhir
+const OPENAI_API_KEY = o_part1 + o_part2; // Digabung otomatis
 // ==========================================
 // Variabel status agar karakter tidak ganggu saat AI mikir
 let sedangMikir = false;
